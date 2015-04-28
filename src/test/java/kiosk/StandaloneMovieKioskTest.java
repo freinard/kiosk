@@ -1,6 +1,7 @@
 package kiosk;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.junit.Before;
@@ -59,7 +60,7 @@ public class StandaloneMovieKioskTest {
     public void shouldStoreLoadedMoviesForListing() {
         List<Movie> movies = new ArrayList<>();
 
-        kiosk.load(movies);
+        kiosk.stock(movies);
 
         verify(movieRepo).load(movies);
     }
@@ -106,7 +107,7 @@ public class StandaloneMovieKioskTest {
         CartFake cart = new CartFake();
         cart.add(movie);
         kiosk.setCart(cart);
-        List<Media> discs = mock(List.class);
+        List<Media> discs = Arrays.asList(new Media());
         when(movieRepo.dispense(cart.getMovies())).thenReturn(discs);
 
         List<Media> rented = kiosk.checkout(card);

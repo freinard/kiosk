@@ -1,5 +1,6 @@
 package kiosk;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class StandaloneMovieKiosk implements MovieKiosk {
@@ -8,8 +9,13 @@ public class StandaloneMovieKiosk implements MovieKiosk {
     private MovieCart cart;
     private Cashier cashier;
 
+    // manage the length of time a movie is checked out
+
+
     @Override
     public MovieListing getMovies() {
+        // inventory.whatsAvailable()
+        // inventory.whatIsUnavailable();
         return movieRepo.getMovies();
     }
 
@@ -19,13 +25,16 @@ public class StandaloneMovieKiosk implements MovieKiosk {
     }
 
     @Override
-    public void load(List<Movie> movies) {
+    public void stock(List<Movie> movies) {
         movieRepo.load(movies);
+        // dispenser.setMedia(List<Media>);
+        // re-inventory
     }
 
     @Override
     public void returnMovie(Movie movie) {
         movieRepo.returnMovie(movie);
+        // cashier.removeAccountPayableFor(movie);
     }
 
     @Override
@@ -44,12 +53,25 @@ public class StandaloneMovieKiosk implements MovieKiosk {
     }
 
     @Override
+    // Return Receipt
     public List<Media> checkout(CreditCard card) throws CheckoutException {
+        // get approval for card
+        // dispense
+        // charge card for dispensed movies
+        // release the hold
+        // update inventory
+        // gen receipt
+
+        // cashier setup accounts payable
+
         chargeCard(card);
         List<Movie> movies = cart.getMovies();
         cashier.reset();
         cart.empty();
-        return movieRepo.dispense(movies);
+
+        //List<Media> dispensed = successful(dispenser.dispense(movies));
+        //inventory.decrementCount(movies);
+        return new ArrayList<>(movieRepo.dispense(movies));
     }
 
     private void chargeCard(CreditCard card) throws CheckoutException {

@@ -8,7 +8,10 @@ public interface MovieKiosk {
 
     MovieListing getMovies(MovieListingFilter filter);
 
-    void load(List<Movie> movies);
+    void stock(List<Movie> movies);
+    // stock with Media not Movies, Media has a movie
+    // give the movie to the scanner
+    // give the disk to the dispenser
 
     void returnMovie(Movie movie);
 
