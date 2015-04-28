@@ -1,4 +1,4 @@
-package kiosk;
+package kiosk.archive;
 
 import java.util.List;
 

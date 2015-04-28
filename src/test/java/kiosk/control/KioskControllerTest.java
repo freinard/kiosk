@@ -2,7 +2,7 @@ package kiosk.control;
 
 import java.util.ArrayList;
 
-import kiosk.Movie;
+import kiosk.archive.Movie;
 import kiosk.inventory.status.InventoryManager;
 import kiosk.inventory.tracking.InventoryScanner;
 import kiosk.media.MediaContainer;

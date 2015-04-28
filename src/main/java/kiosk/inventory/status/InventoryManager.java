@@ -2,7 +2,7 @@ package kiosk.inventory.status;
 
 import java.util.List;
 
-import kiosk.Movie;
+import kiosk.archive.Movie;
 
 public interface InventoryManager {
 

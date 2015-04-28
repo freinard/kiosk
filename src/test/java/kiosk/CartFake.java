@@ -3,6 +3,9 @@ package kiosk;
 import java.util.ArrayList;
 import java.util.List;
 
+import kiosk.archive.Movie;
+import kiosk.archive.MovieCart;
+
 public class CartFake implements MovieCart {
 
     private List<Movie> movies;

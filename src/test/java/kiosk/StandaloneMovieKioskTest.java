@@ -4,6 +4,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import kiosk.archive.Cashier;
+import kiosk.archive.CheckoutException;
+import kiosk.archive.CreditCard;
+import kiosk.archive.InsufficientFundsException;
+import kiosk.archive.Media;
+import kiosk.archive.Movie;
+import kiosk.archive.MovieCart;
+import kiosk.archive.MovieListing;
+import kiosk.archive.MovieListingFilter;
+import kiosk.archive.MovieRepository;
+import kiosk.archive.StandaloneMovieKiosk;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
